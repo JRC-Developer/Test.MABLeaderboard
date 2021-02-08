@@ -1,0 +1,22 @@
+<h1 id="tableLabel">Leaderboard</h1>
+
+<p>Compare against the leaderboard below!</p>
+
+<p *ngIf="!records"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="records">
+  <thead>
+    <tr>
+      <th width="33%">User ID</th>
+      <th width="33%">Score</th>
+      <th width="33%">Games Played</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of records">
+      <td>{{ record.userID }}</td>
+      <td>{{ record.score }}</td>
+      <td>{{ record.gamesPlayed }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,40 @@
+<div class="container">
+  <h2>Edit User</h2>
+  <p>Edit the details of the user below!</p>
+  <p *ngIf="!id"><em>Loading...</em></p>
+
+  <div *ngIf="id">
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="idField">User ID</label>
+        <input class="form-control" id="idField" type="text" [(ngModel)]="id" readonly />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="firstnameField">First Name</label>
+        <input class="form-control" id="firstnameField" type="text" [(ngModel)]="firstname" />
+      </div>
+      <div class="col-sm-6">
+        <label for="lastnameField">Last Name</label>
+        <input class="form-control" id="lastnameField" type="text" [(ngModel)]="lastname" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="emailField">Email</label>
+        <input class="form-control" id="emailField" type="email" [(ngModel)]="email" />
+      </div>
+      <div class="col-sm-6">
+        <label for="telephoneField">Telphone</label>
+        <input class="form-control" id="telephoneField" type="tel" [(ngModel)]="telephone" />
+      </div>
+    </div>
+    <hr />
+    <div class="form-group">
+      <div class="row">
+        <input class="btn btn-primary" type="button" (click)="editUser()" value="Edit User" />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<h1 id="tableLabel">Users</h1>
+
+<p>See all available users below!</p>
+
+<p *ngIf="!users"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="users">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Telephone</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.firstname }}</td>
+      <td>{{ user.lastname }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.telephone }}</td>
+      <td><a class="nav-link" [routerLink]="['/user-edit', user.id]">Edit User</a></td>
+    </tr>
+  </tbody>
+</table>
